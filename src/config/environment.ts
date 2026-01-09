@@ -1,5 +1,5 @@
 // Environment configuration for API client
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://104.197.107.130:8000/api/v1'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api/v1'
 
 // Derive WebSocket URL from API base URL (replace http(s) with ws(s), remove /api/v1 suffix)
 function deriveWebSocketUrl(apiBaseUrl: string): string {
@@ -29,8 +29,9 @@ export const API_CONFIG = {
   IS_PRODUCTION: import.meta.env.PROD,
   IS_TEST: import.meta.env.TEST,
 
-  // WebSocket enabled flag - set VITE_WS_ENABLED=false to disable
-  WS_ENABLED: import.meta.env.VITE_WS_ENABLED !== 'false',
+  // WebSocket enabled flag - disabled in production (Vercel doesn't support WS proxy)
+  // Set VITE_WS_ENABLED=true to enable in development
+  WS_ENABLED: import.meta.env.VITE_WS_ENABLED === 'true' || (import.meta.env.DEV && import.meta.env.VITE_WS_ENABLED !== 'false'),
 }
 
 // Request headers configuration
