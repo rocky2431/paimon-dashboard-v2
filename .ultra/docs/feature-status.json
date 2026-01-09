@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-12-15T18:30:00Z",
+  "features": [
+    {
+      "id": "feat-1",
+      "name": "Initialize project with Vite + React + TypeScript",
+      "status": "pending",
+      "taskId": "1",
+      "implementedAt": "2025-12-15T18:30:00Z",
+      "commit": "113bcc1be5a56df6a6f025d4868c4fd8d9a4e804",
+      "branch": "main"
+    }
+  ]
+}
